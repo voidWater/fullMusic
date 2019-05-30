@@ -1,0 +1,74 @@
+.container{
+ flex-direction: column; 
+}
+.bar{
+  width: 100%; 
+}
+.title-bar{
+  text-align: center;
+  background-color: #eccac8;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.interval-bar{
+  margin-top: 15rpx;
+  text-align: center;
+  background-color: #ffffff;
+  color: rgb(247, 217, 179);
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+}
+.line{
+  width: 100%;
+  height: 1rpx;
+  background-color: #f0f0f0;
+}
+.teacher-list{
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx;
+}
+.teacher{
+  width: 40%;
+}
+.teacher-img{
+  width: 100%;
+}
+.envir{
+  background-color: #fff;
+  padding-top: 20rpx; 
+}
+.img-view{
+  margin-top: 20rpx;
+  padding: 3%;
+  width: 100%;
+}
+.imgs{
+  width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+  border:1px solid f0f0f0;
+  border-radius: 10rpx;
+}
+.img-title{
+  position: absolute;
+  bottom: 10rpx;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: #eccac8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.footer-button{
+  color: #fff;
+  line-height: 100rpx;
+}
+.icon-left:before { content: "\e623";}
