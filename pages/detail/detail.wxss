@@ -1,21 +1,16 @@
 .container{
- flex-direction: column; 
+ flex-direction: column;
+ align-content: space-between;
 }
 .bar{
   width: 100%; 
 }
 .title-bar{
-  text-align: center;
-  background-color: #eccac8;
-  color: #fff;
-  height: 80rpx;
-  line-height: 80rpx;
+  text-align: center; background-color: #eccac8;color: #fff;height: 80rpx;line-height: 80rpx;
 }
 .interval-bar{
-  margin-top: 15rpx;
-  text-align: center;
-  background-color: #ffffff;
-  color: rgb(247, 217, 179);
+  border-top: 25rpx solid #f0f0f0;
+  text-align: center;background-color: #ffffff;color: rgb(247, 217, 179);
   height: 80rpx;
   line-height: 80rpx;
   font-size: 35rpx;
@@ -25,31 +20,34 @@
   height: 1rpx;
   background-color: #f0f0f0;
 }
+.slide-bar{
+  width: 100%;height: 500rpx;
+}
+.slide-image{
+  width: 100%;height: 500rpx;
+}
 .teacher-list{
-  display: flex;
-  flex-direction: row;
-  padding: 10rpx;
+  display: flex;flex-direction: row;padding: 10rpx;flex-wrap: wrap;justify-content: space-evenly;background-color: #ffffff;
 }
 .teacher{
-  width: 40%;
+  width: 40%;height: 40%;margin-top: 35rpx;
 }
 .teacher-img{
-  width: 100%;
+  width: 100%;height: 250rpx;border:1px solid f0f0f0;border-radius: 10rpx;
+}
+.teacher-text{
+  font-size: 30rpx;color: #adaaaa;
 }
 .envir{
   background-color: #fff;
   padding-top: 20rpx; 
 }
-.img-view{
-  margin-top: 20rpx;
-  padding: 3%;
+.envir-img-view{
+  margin: 0 4%;
   width: 100%;
 }
-.imgs{
-  width: auto;
-	height: auto;
-	max-width: 100%;
-	max-height: 100%;
+.envir-imgs{
+  width: 92%;
   border:1px solid f0f0f0;
   border-radius: 10rpx;
 }
@@ -57,8 +55,17 @@
   position: absolute;
   bottom: 10rpx;
 }
+.map-view{
+  padding: 2%;
+  background-color: #fff;
+  text-align:center;
+}
+.maps{
+  width:100%;
+}
 .footer {
   position: fixed;
+  z-index: 999999;
   bottom: 0;
   width: 100%;
   height: 100rpx;

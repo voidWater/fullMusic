@@ -12,8 +12,8 @@ Page({
       vertical: false,
       autoplay: true,
       circular: true,
-      interval: 2000,
-      duration: 500,
+      interval: 6000,
+      duration: 2000,
       previousMargin: 0,
       nextMargin: 0
     },
