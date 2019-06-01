@@ -1,0 +1,23 @@
+<!--pages/course/course.wxml-->
+<view class="containerc">
+<view class="head-bar">
+
+</view>
+<view class="list">
+</view>
+<view class="course-list">
+</view>
+
+
+<cover-view class='footer'>
+  <cover-view class='footer-button' bindtap="toDetail">
+    <text class="iconfont icon-home footer-button"></text>
+  </cover-view> 
+  <cover-view class='footer-button'>
+    <text class="iconfont icon-kecheng3 footer-button " bindtap="toCourse"></text>
+  </cover-view>
+  <cover-view class='footer-button'>
+    <text class="iconfont icon-ren footer-button footer-active" ></text>
+  </cover-view>
+</cover-view>
+</view>

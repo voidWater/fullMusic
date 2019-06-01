@@ -51,8 +51,14 @@
   </view>
 </view>
 <cover-view class='footer'>
-  <cover-view class='footer-button'>首页</cover-view> 
-  <cover-view class='footer-button'>课程</cover-view>
-  <cover-view class='footer-button'>我的</cover-view>
+  <cover-view class='footer-button' >
+    <text class="iconfont icon-home footer-button footer-active"></text>
+  </cover-view> 
+  <cover-view class='footer-button' bindtap="toCourse">
+    <text class="iconfont icon-kecheng3 footer-button"></text>
+  </cover-view>
+  <cover-view class='footer-button'>
+    <text class="iconfont icon-ren footer-button"  bindtap="toPerson"></text>
+  </cover-view>
 </cover-view>
 </view>

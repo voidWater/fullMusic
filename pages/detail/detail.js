@@ -21,6 +21,16 @@ Page({
       {}
     ]
   },
+  toCourse:function(){
+    wx.navigateTo({
+      url: '../course/course'
+    })
+  },
+  toPerson:function(){
+    wx.navigateTo({
+      url: '../person/person'
+    })
+  },
   onLoad: function () {
 
   }

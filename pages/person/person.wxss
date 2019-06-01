@@ -1,0 +1,9 @@
+@import "/icon/icon.wxss";
+.head-bar{
+  width: 100%;
+  height: 300rpx;
+  background-color: #eccac8;
+  border-bottom: 1rpx solid #eccac8;
+  border-bottom-left-radius: 300rpx;
+  border-bottom-right-radius: 300rpx;
+}

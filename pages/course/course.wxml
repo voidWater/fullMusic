@@ -1,0 +1,36 @@
+<!--pages/course/course.wxml-->
+<view class="containerc">
+<view class="course-list">
+  <view class="course" >
+    <view class="course-title">
+       <view>课程介绍</view>
+       <view>这个是音乐课</view>
+    </view>
+  </view>
+  <view class="course" >
+    <view class="course-title">
+      <view>课程介绍</view>
+      <view>这个是钢琴课</view>
+    </view>
+  </view>
+  <view class="course" >
+    <view class="course-title">
+      <view>课程介绍</view>
+      <view>这个是钢琴课</view>
+    </view>
+  </view>
+</view>
+
+
+<cover-view class='footer'>
+  <cover-view class='footer-button' bindtap="toDetail">
+    <text class="iconfont icon-home footer-button"></text>
+  </cover-view> 
+  <cover-view class='footer-button'>
+    <text class="iconfont icon-kecheng3 footer-button footer-active"></text>
+  </cover-view>
+  <cover-view class='footer-button'>
+    <text class="iconfont icon-ren footer-button" bindtap="toPerson"></text>
+  </cover-view>
+</cover-view>
+</view>
