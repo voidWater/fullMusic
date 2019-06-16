@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/clock/clock",
     "pages/detail/detail",
     "pages/index/index",
     "pages/course/course",
