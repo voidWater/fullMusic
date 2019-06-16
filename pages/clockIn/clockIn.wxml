@@ -1,0 +1,13 @@
+
+<view class="page-section">
+    <view class="page-section-title">clock in ...</view>
+    <view class="textarea-wrp">
+      <textarea bindblur="bindTextAreaBlur"  />
+    </view>
+</view>
+<view class="group">
+    <icon type="download" size="40" bindtap="chooseVideo"/>
+</view>
+<view >
+  <button bindtap="clocking" type='primary'>打卡</button>
+</view>

@@ -5,7 +5,8 @@
     "pages/index/index",
     "pages/course/course",
     "pages/logs/logs",
-    "pages/person/person"
+    "pages/person/person",
+    "pages/clockIn/clockIn"
   ],
   "window": {
     "backgroundTextStyle": "light",

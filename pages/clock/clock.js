@@ -10,6 +10,11 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  clockInPage:function(){//进入打卡页面
+    wx.navigateTo({
+      url: '../clockIn/clockIn'
+    })
+  },
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

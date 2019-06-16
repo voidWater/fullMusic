@@ -49,7 +49,7 @@
   </view>
   <view class='footer dk-footer' >
     <view class='footer-button'>
-      <view ><image class="img-dk" src="../../img/mz2.jpg"></image></view>
+      <view ><image class="img-dk" src="../../img/mz2.jpg" bindtap="clockInPage"></image></view>
     </view>
   </view>
 </view>
