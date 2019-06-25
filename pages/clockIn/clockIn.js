@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    content:"123",
+    src:""
   },
   chooseVideo: function () {
     var that = this
@@ -16,6 +17,28 @@ Page({
         })
       }
     })
+  },
+  test1:function(){
+    console.log(1)
+  },
+  test:function(){
+    console.log(123);
+    var src = this.data.src;
+    wx.uploadFile({
+      url: 'https://www.fullmusic.club:444/xcx/clock?userId=123&content='+this.data.content,//服务器接口
+      method: 'POST',//这句话好像可以不用
+      filePath: src,
+      header: {
+        'content-type': 'multipart/form-data'
+      },
+      name: 'files',//服务器定义的Key值
+      success: function () {
+        console.log('视频上传成功')
+      },
+      fail: function () {
+        console.log('接口调用失败')
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面加载
