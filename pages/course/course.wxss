@@ -15,7 +15,6 @@ page{
 }
 .course{
   background-image: url('https://p1.meituan.net/movie/a0daade1b36403d73a0000faf608f50f2791563.jpg@465w_258h_1e_1c');
-  
   margin: 20rpx auto;
   width:90%; height: 400rpx;
   border: 1rpx solid #bebdbd;

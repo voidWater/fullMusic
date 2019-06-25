@@ -1,14 +1,18 @@
 /* pages/clock/clock.wxss */
 .bb{
-  height:180rpx;
+  height:160rpx;
+}
+.head-userinfo-avatar{
+  width: 120rpx;height: 120rpx;border-radius: 120rpx;
+}
+.head-userinfo-nickname{
+  line-height: 120rpx;font-weight:bold;margin-left: 10rpx;
+}
+.head-btn{
+  line-height: 80rpx;font-weight:bold;margin-left: 10rpx;background-color:rgba(195, 194, 196, 0.2);float: right;margin: 10rpx 20rpx;border-radius: 5rpx;
 }
 .userinfo-avatar{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 100rpx;
-}
-.userinfo-nickname{
-  line-height: 100rpx;
+  width: 100rpx;height: 100rpx;border-radius: 100rpx; margin: 20rpx;
 }
 .head-userinfo{
   height: 100rpx;
@@ -17,13 +21,10 @@
 .head-bar{
   height: 300rpx;
   background-color: #3243;
+  background-image: url('https://www.fullmusic.club:444/th2.jpg');
 }
 .clock-list{
-  height: 10000rpx;
-  background-color: #fff;
-  border-top:3px solid #3243;
-  border-radius: 20px;
-  padding-top: 10rpx;
+  background-color: #fff;border-top:3px solid #3243;border-radius: 20px;padding-top: 10rpx;padding-bottom: 140rpx;
 }
 .clock{
   display: flex;
@@ -36,18 +37,21 @@
   margin:auto;
 }
 .clock-name{
-  padding: 20rpx;
+  padding-top: 20rpx; height: 50rpx;line-height: 50rpx;font-weight:bold;color: rgb(10, 119, 10);
 }
 .clock-context{
-  padding: 20rpx;
+  padding: 0 20rpx;padding-bottom: 10rpx;
 }
 .comment-list{
-  background-color: rgba(238, 236, 240, 0.2);
+  background-color: rgba(195, 194, 196, 0.2);
   margin: 10rpx 20rpx;
 }
 .comment-name{
   color: rgb(7, 165, 86);
   font-weight: 100rpx;
+}
+.comment-btn{
+  padding: 5rpx;background-color:rgba(195, 194, 196, 0.2);float: left;margin: 10rpx 20rpx;border-radius: 5rpx;box-shadow: 2rpx 2rpx 5rpx #888888;
 }
 .img-dk{
   width:140rpx;height:140rpx;border-radius:100%;

@@ -8,19 +8,68 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    isSignIn:false,
+    qrcode:""
   },
   clockInPage:function(){//进入打卡页面
     wx.navigateTo({
       url: '../clockIn/clockIn'
     })
   },
-  getUserInfo: function (e) {
+  getUserInfo: function (e) {//获取用户信息
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
-    this.setData({
+    app.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  login: function(){//登录
+    console.log("login")
+    var that = this;
+    wx.request({
+      url: 'https://www.fullmusic.club:444/xcx/login?userId=' + this.data.userInfo.nickName,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.code==22){
+          that.setData({
+            isSignIn: true
+          })
+        }
+      }
+    })
+  },
+  openScan:function(){//扫码注册
+    var that = this;
+    console.log(this.data.userInfo);
+    wx.scanCode({
+      onlyFromCamera: true,
+      success(res) {
+        wx.request({
+          url: 'https://www.fullmusic.club:444/xcx/loginIn?userId=' + that.data.userInfo.nickName + "&password=" + res.result,
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            if (res.data.code == 33) {
+              that.setData({
+                isSignIn: true
+              })
+            }else{
+              that.setMessage("("+res.data.msg+")");
+            }
+          }
+        })
+      }
+    })
+  },
+  setMessage:function(msg){//test消息
+    this.setData({
+      qrcode: msg
     })
   },
   /**
@@ -32,6 +81,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
+      this.login();
     } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
@@ -39,7 +89,8 @@ Page({
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
-        })
+        });
+        this.login();
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
@@ -49,7 +100,8 @@ Page({
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
-          })
+          });
+          this.login();
         }
       })
     }

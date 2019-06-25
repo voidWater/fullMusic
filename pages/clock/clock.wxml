@@ -1,53 +1,97 @@
 <!--pages/clock/clock.wxml-->
 <view>
-  <view class="head-bar" style='background:url(../../img/th2.jpg'>
+  <view class="head-bar">
   <view class="bb"></view>
     <view class="head-userinfo">
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <image class="head-userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="head-userinfo-nickname" bindtap='login'>{{userInfo.nickName}}{{qrcode}}</text>
     </view>
   </view>
-  <view class="clock-list">
+  <view hidden='{{isSignIn}}'><button type="primary" bindtap='openScan'>注册</button></view>
+  <view hidden='{{!isSignIn}}' class="clock-list">
+    <!----> 
     <view class='clock'>
       <view class="clock-left">
         <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <view class="clock-name">voidfire</view>
       </view>
       <view class="clock-right">
+        <view class="clock-name">voidfire</view>
         <view class="clock-context">今天是个好日子</view>
           <view class="clock-video">
-            <video  src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"   ></video>
+            <video  src="https://www.fullmusic.club:444/01.mp4"   ></video>
           </view>
           <view class="clock-bar"></view>
-          <view>评论：</view>
           <view class="comment-list">
               <view><text class="comment-name">立宪昌:</text>2132312312</view>
               <view><text class="comment-name">立宪昌:</text>2132312312</view>
           </view>
+          <view class="comment-btn">评论</view>
         </view>
     </view>
-      
-      
+    <!---->  
     <view class='clock'>
       <view class="clock-left">
         <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <view class="clock-name">voidfire</view>
       </view>
       <view class="clock-right">
-        <view class="clock-context">今天是个好日子</view>
+        <view class="clock-name">voidfire</view>
+        <view class="clock-context">今天是个好日子1</view>
           <view class="clock-video">
-            <video  src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"   ></video>
+            <video  src="https://www.fullmusic.club:444/01.mp4"   ></video>
           </view>
           <view class="clock-bar"></view>
-          <view>评论：</view>
           <view class="comment-list">
               <view><text class="comment-name">立宪昌:</text>2132312312</view>
               <view><text class="comment-name">立宪昌:</text>2132312312</view>
           </view>
+          <view class="comment-btn">评论</view>
         </view>
     </view>
+    <!---->  
+    <view class='clock'>
+      <view class="clock-left">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      </view>
+      <view class="clock-right">
+        <view class="clock-name">voidfire</view>
+        <view class="clock-context">今天是个好日子</view>
+          <view class="clock-video">
+            <video  src="https://www.fullmusic.club:444/01.mp4"   ></video>
+          </view>
+          <view class="clock-bar"></view>
+          <view class="comment-list">
+              <view><text class="comment-name">立宪昌:</text>2132312312</view>
+              <view><text class="comment-name">立宪昌:</text>2132312312</view>
+          </view>
+          <view class="comment-btn">评论</view>
+        </view>
+    </view>
+    <!---->  
+    <view class='clock'>
+      <view class="clock-left">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      </view>
+      <view class="clock-right">
+        <view class="clock-name">voidfire</view>
+        <view class="clock-context">今天是个好日子</view>
+          <view class="clock-video">
+            <video  src="https://www.fullmusic.club:444/01.mp4"   ></video>
+          </view>
+          <view class="clock-bar"></view>
+          <view class="comment-list">
+              <view><text class="comment-name">立宪昌:</text>2132312312</view>
+              <view><text class="comment-name">立宪昌:</text>2132312312</view>
+          </view>
+          <view class="comment-btn">评论</view>
+        </view>
+    </view>
+    <!---->  
+  
+   
+      
+    
   </view>
-  <view class='footer dk-footer' >
+  <view hidden='{{!isSignIn}}' class='footer dk-footer' >
     <view class='footer-button'>
       <view ><image class="img-dk" src="../../img/mz2.jpg" bindtap="clockInPage"></image></view>
     </view>
