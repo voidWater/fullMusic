@@ -10,7 +10,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isSignIn:false,
-    qrcode:""
+    qrcode:"",
+    clockInList:[]
   },
   clockInPage:function(){//进入打卡页面
     wx.navigateTo({
@@ -23,6 +24,30 @@ Page({
     app.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  pusgComment: function (val){
+    var that = this;
+    wx.request({
+      url: 'https://www.fullmusic.club:444/xcx/comment?clockInId=123&content=12312sssss',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res)
+      }
+    })
+  },
+  getcomment:function(){
+    var that = this;
+    wx.request({
+      url: 'https://www.fullmusic.club:444/xcx/login?userId=' + this.data.userInfo.nickName,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res)
+      }
     })
   },
   login: function(){//登录
@@ -38,6 +63,25 @@ Page({
         if (res.data.code==22){
           that.setData({
             isSignIn: true
+          })
+          that.getClockInList();
+        }
+      }
+    })
+  },
+  getClockInList:function(){//获取打卡列表
+    var that = this;
+    wx.request({
+      url: 'https://www.fullmusic.club:444/xcx/clockInList?userId=' + this.data.userInfo.nickName +'&currPage=1',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.code == 0) {
+          console.log(res.data)
+          that.setData({
+            clockInList: res.data.list
           })
         }
       }

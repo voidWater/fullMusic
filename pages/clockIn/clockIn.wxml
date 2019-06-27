@@ -1,14 +1,14 @@
 
 <view class="page-section">
     <view class="textarea-wrp">
-      <textarea bindblur="bindTextAreaBlur"  value="{{content}}"/>
+      <textarea bindblur="bindTextAreaBlur"  value="{{content}}" placeholder="请输入内容"/>
     </view>
 </view>
 <view class="group">
     <block wx:if="{{src != ''}}">
         <video src="{{src}}" class="video"></video>
     </block>
-    <icon type="download" size="40" bindtap="chooseVideo"/>
+    <image style="width: 60px; height: 60px; background-color: #eeeeee;margin-left:25rpx"  src="../../img/syj.png" bindtap="chooseVideo"></image>
 </view>
 <view >
   <button bindtap="test" type='primary'>打卡</button>
