@@ -26,17 +26,22 @@ Page({
       hasUserInfo: true
     })
   },
-  pusgComment: function (val){
-    var that = this;
-    wx.request({
-      url: 'https://www.fullmusic.club:444/xcx/comment?clockInId=123&content=12312sssss',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res)
-      }
-    })
+  bindKeyInput:function(e){
+    console.log(e.currentTarget.dataset.id)
+    console.log(e.detail.value);
+  },
+  pusgComment: function (event){
+    console.log(event.currentTarget.dataset.id)
+    // var that = this;
+    // wx.request({
+    //   url: 'https://www.fullmusic.club:444/xcx/comment?clockInId=123&content=12312sssss',
+    //   header: {
+    //     'content-type': 'application/json' // 默认值
+    //   },
+    //   success(res) {
+    //     console.log(res)
+    //   }
+    // })
   },
   getcomment:function(){
     var that = this;

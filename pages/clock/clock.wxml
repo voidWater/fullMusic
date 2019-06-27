@@ -29,9 +29,9 @@
               <view><text class="comment-name">立宪昌:</text>2132312312</view>
           </view>
           <view style="padding-left:20rpx">
-             <input placeholder="请输入评论" auto-focus/>
+             <input data-id="{{item.id}}" placeholder="请输入评论" bindinput="bindKeyInput"/>
           </view>
-          <view class="comment-btn" bindtap='pusgComment(123)'>评论</view>
+          <view data-id="{{item.id}}" class="comment-btn" bindtap='pusgComment'>评论</view>
         </view>
     </view>
     <!---->  
