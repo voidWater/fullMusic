@@ -1,0 +1,17 @@
+
+.jp-img{
+  width: 150rpx;
+  height: 120rpx;
+}
+.meRk{
+  margin-top: 20rpx;
+  text-align: center
+}
+.jp-text{
+  display: inline-block;
+  height: 75rpx;
+  line-height: 75rpx;
+}
+.rkList{
+  margin-top: 20rpx;
+}

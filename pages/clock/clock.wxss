@@ -56,7 +56,33 @@
 .img-dk{
   width:140rpx;height:140rpx;border-radius:100%;
   margin-bottom: 10rpx;
+  position: fixed;
+  z-index: 999999;
+  left: 0;
+  right: 0;
+  margin:5rpx auto;
+  bottom: 5rpx;
+}
+.footer-btn{
+  width:50rpx;
+  height:50rpx;
+  display: block;
+}
+.footer-btn-text{
+  font-size: 20rpx;
+  color: #fff;
 }
 .dk-footer{
    background-repeat: repeat-x;
+}
+.clock-footer{
+   display: flex;
+   justify-content:space-around;
+   height:90rpx;width:100%;background-color:#FF9191;margin-top:61rpx;
+}
+.setting{
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
 }

@@ -1,0 +1,10 @@
+<view></view>
+<view>
+<view class="meRk">我的排名:第{{rk}}名</view>
+<view class="rkList" wx:for="{{rankingList}}">
+  <image hidden='{{index!=0}}' class="jp-img" src="../../img/jp.png" ></image>
+  <image hidden='{{index!=1}}'class="jp-img" src="../../img/jp2.png" ></image>
+  <image hidden='{{index!=2}}'class="jp-img" src="../../img/jp3.png" ></image>
+  <text class="jp-text">{{item.vc_user_id}}</text>
+</view>
+</view>

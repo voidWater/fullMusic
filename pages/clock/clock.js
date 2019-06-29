@@ -11,11 +11,18 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isSignIn:false,
     qrcode:"",
-    clockInList:[]
+    clockInList:[],
+    conmms:"",
+    updateConmmsClockinId:""
   },
   clockInPage:function(){//进入打卡页面
     wx.navigateTo({
-      url: '../clockIn/clockIn'
+      url: '../clockIn/clockIn?userId=' + this.data.userInfo.nickName
+    })
+  },
+  toRankingList:function(){//进入打开界面
+    wx.navigateTo({
+      url: '../rankingList/rankingList?userId=' + this.data.userInfo.nickName
     })
   },
   getUserInfo: function (e) {//获取用户信息
@@ -27,31 +34,49 @@ Page({
     })
   },
   bindKeyInput:function(e){
-    console.log(e.currentTarget.dataset.id)
-    console.log(e.detail.value);
+    //console.log(e.currentTarget.dataset.id)
+    //console.log(e.detail.value);
+    this.setData({
+      conmms: e.detail.value
+    })
   },
   pusgComment: function (event){
     console.log(event.currentTarget.dataset.id)
-    // var that = this;
-    // wx.request({
-    //   url: 'https://www.fullmusic.club:444/xcx/comment?clockInId=123&content=12312sssss',
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res)
-    //   }
-    // })
-  },
-  getcomment:function(){
     var that = this;
     wx.request({
-      url: 'https://www.fullmusic.club:444/xcx/login?userId=' + this.data.userInfo.nickName,
+      url: 'https://www.fullmusic.club:444/xcx/comment?userId=' + this.data.userInfo.nickName+'&clockInId=' + event.currentTarget.dataset.id + '&content=' + this.data.conmms,
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
         console.log(res)
+      }
+    })
+  },
+  getcomment:function(id){//更新评论
+    var that = this;
+    console.log(id)
+    var iis =id
+    wx.request({
+      url: 'https://www.fullmusic.club:444/xcx/getComment?clockInId=' + id,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        var comms = that.data.clockInList;
+        for (let i = 0; i < comms.length;i++){
+          
+          if (comms[i].id==id){
+            console.log('-------------');
+            
+            comms[i].coommsList = res.data.list;
+            console.log(comms[i].coommsList);
+            console.log('-------------');
+          }
+        }
+        that.setData({
+          clockInList:comms
+        });
       }
     })
   },
@@ -85,12 +110,22 @@ Page({
         console.log(res)
         if (res.data.code == 0) {
           console.log(res.data)
+          for (let i = 0; i < res.data.list.length; i++) {
+            //console.log(res.data.list);
+            res.data.list[i].vcResourceUrl = "https://www.fullmusic.club:444/" + res.data.list[i].vcResourceUrl;
+          }
           that.setData({
             clockInList: res.data.list
           })
+          for (let i = 0; i < res.data.list.length; i++) {
+            //console.log(res.data.list);
+            that.getcomment(res.data.list[i].id);
+          }
+          console.log(that.data.clockInList);
         }
       }
     })
+    
   },
   openScan:function(){//扫码注册
     var that = this;
@@ -160,7 +195,30 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.connectSocket({
+      url: 'wss://www.fullmusic.club:444/fullmusic',
+      success: function (res) {
+        console.log("连接服务器成功")
+      },
+      fail: function (res) {
+        console.log("连接服务器失败")
+      }
+    });
+    var myThis = this;
+    wx.onSocketMessage(function (res) {
+      console.log(res.data)
+      if (res.data.indexOf("有") != -1){
+        console.log(res.data);
+      }else{
+        myThis.getcomment(res.data)
+      }
+     
+      /*wx.showToast({
+        title: myThis.data.updateConmmsClockinId,
+        icon: 'none',
+        duration: 2000
+      })*/
+    })
   },
 
   /**

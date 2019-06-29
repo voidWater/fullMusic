@@ -6,7 +6,8 @@ Page({
    */
   data: {
     content:"",
-    src:""
+    src:"",
+    userId:""
   },
   chooseVideo: function () {
     var that = this
@@ -18,21 +19,37 @@ Page({
       }
     })
   },
-  test1:function(){
-    console.log(1)
+  bindKeyInput: function (e){
+    this.setData({
+      content: e.detail.value,
+    })
   },
   test:function(){
+
+    console.log(this.data.content)
     var src = this.data.src;
+    if(src.length<1 ){
+      console.log("没有输入内容或视频！")
+      return 
+    }
+    wx.showToast({
+      title: '正在上传视频。。。',
+      icon: 'none',
+      duration: 30000
+    })
     wx.uploadFile({
-      url: 'https://www.fullmusic.club:444/xcx/clock?userId=voidfire&content='+this.data.content,//服务器接口
+      url: 'https://www.fullmusic.club:444/xcx/clock?userId=' + this.data.userId + '&content=' + encodeURI(this.data.content),//服务器接口
       method: 'POST',//这句话好像可以不用
       filePath: src,
       header: {
-        'content-type': 'multipart/form-data'
+        'content-type': 'multipart/form-data;charset=UTF-8'
       },
       name: 'file',//服务器定义的Key值
       success: function () {
         console.log('视频上传成功')
+        wx.navigateTo({
+          url: '../clock/clock'
+        })
       },
       fail: function () {
         console.log('接口调用失败')
@@ -43,7 +60,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    this.setData({
+      userId: options.userId
+    }) 
   },
   clocking:function(){
 

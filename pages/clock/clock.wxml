@@ -21,12 +21,12 @@
         <view class="clock-name">{{item.vcUserId}}</view>
         <view class="clock-context">{{item.vcContent}}</view>
           <view class="clock-video">
-            <video  src="https://www.fullmusic.club:444/01.mp4"></video>
+            <video  src="{{item.vcResourceUrl}}"></video>
           </view>
           <view class="clock-bar"></view>
           <view class="comment-list">
-              <view><text class="comment-name">立宪昌:</text>2132312312</view>
-              <view><text class="comment-name">立宪昌:</text>2132312312</view>
+             <view wx:for="{{item.coommsList}}" wx:for-item="list" wx:for:key="id"><text class="comment-name">{{list.vcUserId}}:</text>{{list.vcContent}}</view>
+             <!--<view><text class="comment-name">立宪昌:</text>2132312312</view>--> 
           </view>
           <view style="padding-left:20rpx">
              <input data-id="{{item.id}}" placeholder="请输入评论" bindinput="bindKeyInput"/>
@@ -43,9 +43,30 @@
     <!---->  
     
   </view>
+  <image hidden='{{!isSignIn}}' class="img-dk" src="../../img/mz2.jpg" bindtap="clockInPage"></image>
   <view hidden='{{!isSignIn}}' class='footer dk-footer' >
-    <view class='footer-button'>
+    <view class="clock-footer" >
+      <!-- <view>
+        <image class='footer-btn' src="../../img/phb1.png" bindtap="toRankingList"></image>
+        <text class="footer-btn-text">排行榜</text>
+      </view> -->
+      <view class='setting' bindtap='toRankingList'>
+      <image class='btnImg' src='../../img/phb1.png' style="width:50rpx;height:50rpx;"></image>
+      <text style="font-size:30rpx;color:#ffff">排行榜</text>
+      </view>
+      <view></view>
+      <view class='setting' bindtap='toRankingList'>
+      <image class='btnImg' src='../../img/me1.png' style="width:50rpx;height:50rpx;"></image>
+      <text style="font-size:30rpx;color:#ffff">我的</text>
+      </view>
+      <!-- <view>
+        <image class='footer-btn' src="../../img/me1.png" bindtap=""></image>
+        <text class="footer-btn-text">我的</text>
+      </view> -->
+    </view>
+    <!-- <view class='footer-button'>
       <view ><image class="img-dk" src="../../img/mz2.jpg" bindtap="clockInPage"></image></view>
     </view>
+    <view style='with:100%;height:50rpx;background-color:red'></view> -->
   </view>
 </view>

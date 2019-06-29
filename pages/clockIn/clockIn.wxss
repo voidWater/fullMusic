@@ -28,3 +28,6 @@ textarea {
   padding-left: 30rpx;
   padding-right: 30rpx;
 }
+.video-btn{
+  width: 60px; height: 60px; background-color: #eeeeee;margin-left:25rpx
+}
