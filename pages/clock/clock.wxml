@@ -55,7 +55,7 @@
       <text style="font-size:30rpx;color:#ffff">排行榜</text>
       </view>
       <view></view>
-      <view class='setting' bindtap='toRankingList'>
+      <view class='setting' bindtap='toMe'>
       <image class='btnImg' src='../../img/me1.png' style="width:50rpx;height:50rpx;"></image>
       <text style="font-size:30rpx;color:#ffff">我的</text>
       </view>

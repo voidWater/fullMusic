@@ -20,6 +20,11 @@ Page({
       url: '../clockIn/clockIn?userId=' + this.data.userInfo.nickName
     })
   },
+  toMe: function () {//进入打开界面
+    wx.navigateTo({
+      url: '../dateutil/date' 
+    })
+  },
   toRankingList:function(){//进入打开界面
     wx.navigateTo({
       url: '../rankingList/rankingList?userId=' + this.data.userInfo.nickName

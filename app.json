@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/main/main",
     "pages/clock/clock",
     "pages/detail/detail",
     "pages/index/index",
@@ -7,13 +8,21 @@
     "pages/logs/logs",
     "pages/person/person",
     "pages/clockIn/clockIn",
-    "pages/rankingList/rankingList"
+    "pages/rankingList/rankingList",
+    "pages/dateutil/date"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "简音教室",
+    "navigationBarTitleText": "练了吗",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "calendar": {
+      "version": "1.1.0",
+      "provider": "wx92c68dae5a8bb046"
+    }
+  }
 }

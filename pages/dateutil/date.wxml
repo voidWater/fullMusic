@@ -1,0 +1,1 @@
+<calendar calendar-style="calendar" header-style="header" board-style="board" days-color="{{days_style}}"/>
