@@ -50,7 +50,7 @@
     <map class="maps"></map>
   </view>
 </view>
-<cover-view class='footer'>
+<!-- <cover-view class='footer'>
   <cover-view class='footer-button' >
     <cover-view class="iconfont icon-home footer-button footer-active">首页</cover-view>
   </cover-view> 
@@ -60,5 +60,5 @@
   <cover-view class='footer-button'>
     <cover-view class="iconfont icon-ren footer-button"  bindtap="toPerson">我的</cover-view>
   </cover-view>
-</cover-view>
+</cover-view> -->
 </view>

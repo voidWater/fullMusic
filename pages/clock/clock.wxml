@@ -7,8 +7,7 @@
       <text class="head-userinfo-nickname" bindtap='login'>{{userInfo.nickName}}{{qrcode}}</text>
     </view>
   </view>
-  <view hidden='{{isSignIn}}'><button type="primary" bindtap='openScan'>注册</button></view>
-  <view hidden='{{!isSignIn}}' class="clock-list">
+  <view  class="clock-list">
     <!----> 
     <view wx:for="{{array}}">
       {{index}}: {{item.message}}
@@ -29,7 +28,7 @@
              <!--<view><text class="comment-name">立宪昌:</text>2132312312</view>--> 
           </view>
           <view style="padding-left:20rpx">
-             <input data-id="{{item.id}}" placeholder="请输入评论" bindinput="bindKeyInput"/>
+             <input data-id="{{item.id}}" placeholder="请输入评论" bindinput="bindKeyInput" value="{{item.input}}"/>
           </view>
           <view data-id="{{item.id}}" class="comment-btn" bindtap='pusgComment'>评论</view>
         </view>
@@ -43,8 +42,8 @@
     <!---->  
     
   </view>
-  <image hidden='{{!isSignIn}}' class="img-dk" src="../../img/mz2.jpg" bindtap="clockInPage"></image>
-  <view hidden='{{!isSignIn}}' class='footer dk-footer' >
+  <image  class="img-dk" src="../../img/mz2.jpg" bindtap="clockInPage"></image>
+  <view  class='footer dk-footer' >
     <view class="clock-footer" >
       <!-- <view>
         <image class='footer-btn' src="../../img/phb1.png" bindtap="toRankingList"></image>

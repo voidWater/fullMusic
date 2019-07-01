@@ -1,0 +1,6 @@
+<!--pages/main/head.wxml-->
+<view class="img-view">
+<image class="img" src="../../img/main.jpg" mode="widthFix"></image>
+</view>
+
+<view class="jump-btn" bindtap='jump'>跳过（{{countDown}}s）</view>

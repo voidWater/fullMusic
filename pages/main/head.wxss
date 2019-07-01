@@ -1,0 +1,20 @@
+/* pages/main/head.wxss */
+.img-view{
+  text-align: center;
+}
+.img{
+  height:100%;
+}
+
+.jump-btn{
+  
+  position: fixed;
+  right: 20rpx;
+  bottom: 30rpx;
+  padding: 20rpx;
+  border: 1rpx solid rgb(185, 174, 174);
+  color: rgb(202, 187, 187);
+  font-size: 30rpx;
+  border-radius: 50rpx;
+  text-align: center;
+}

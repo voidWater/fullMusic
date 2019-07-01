@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/main/head",
     "pages/main/main",
     "pages/clock/clock",
     "pages/detail/detail",
@@ -10,7 +11,6 @@
     "pages/clockIn/clockIn",
     "pages/rankingList/rankingList",
     "pages/dateutil/date"
-   
   ],
   "window": {
     "backgroundTextStyle": "light",

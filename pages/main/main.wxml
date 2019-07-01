@@ -1,13 +1,13 @@
 <!--pages/main/main.wxml-->
-<view class="mybody" >
+<view class="" >
 <view class="head">
   <text>简乐艺术中心</text>
 </view>
 <view class="btn-list">
-  <view class="btn">中心简介</view>
+  <view class="btn" bindtap='toIntro'>中心简介</view>
   <view class="btn">我的房间</view>
-  <view class="btn">小打卡</view>
+  <view class="btn" bindtap='toClockin'>小打卡</view>
   <view class="btn">在线约课</view>
+  <view class="btn" hidden='{{isSignIn}}' bindtap='siginIn'>注册(请扫描老师提供的二维码)</view>
 </view>
-<view class="jump-btn">跳过({{sc}}s)</view>
 </view>

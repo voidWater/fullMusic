@@ -38,7 +38,7 @@ Page({
       duration: 30000
     })
     wx.uploadFile({
-      url: 'https://www.fullmusic.club:444/xcx/clock?userId=' + this.data.userId + '&content=' + encodeURI(this.data.content),//服务器接口
+      url: 'https://fullmusic.club/xcx/clock?userId=' + this.data.userId + '&content=' + encodeURI(this.data.content),//服务器接口
       method: 'POST',//这句话好像可以不用
       filePath: src,
       header: {

@@ -9,11 +9,11 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    isSignIn:false,
     qrcode:"",
     clockInList:[],
     conmms:"",
-    updateConmmsClockinId:""
+    updateConmmsClockinId:"",
+    arr:[]
   },
   clockInPage:function(){//进入打卡页面
     wx.navigateTo({
@@ -45,11 +45,11 @@ Page({
       conmms: e.detail.value
     })
   },
-  pusgComment: function (event){
+  pusgComment: function (event){//评论
     console.log(event.currentTarget.dataset.id)
     var that = this;
     wx.request({
-      url: 'https://www.fullmusic.club:444/xcx/comment?userId=' + this.data.userInfo.nickName+'&clockInId=' + event.currentTarget.dataset.id + '&content=' + this.data.conmms,
+      url: 'https://fullmusic.club/xcx/comment?userId=' + this.data.userInfo.nickName+'&clockInId=' + event.currentTarget.dataset.id + '&content=' + this.data.conmms,
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -63,7 +63,7 @@ Page({
     console.log(id)
     var iis =id
     wx.request({
-      url: 'https://www.fullmusic.club:444/xcx/getComment?clockInId=' + id,
+      url: 'https://fullmusic.club/xcx/getComment?clockInId=' + id,
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -72,13 +72,11 @@ Page({
         for (let i = 0; i < comms.length;i++){
           
           if (comms[i].id==id){
-            console.log('-------------');
-            
             comms[i].coommsList = res.data.list;
-            console.log(comms[i].coommsList);
-            console.log('-------------');
           }
+          comms.input="";
         }
+        
         that.setData({
           clockInList:comms
         });
@@ -86,28 +84,12 @@ Page({
     })
   },
   login: function(){//登录
-    console.log("login")
-    var that = this;
-    wx.request({
-      url: 'https://www.fullmusic.club:444/xcx/login?userId=' + this.data.userInfo.nickName,
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res)
-        if (res.data.code==22){
-          that.setData({
-            isSignIn: true
-          })
-          that.getClockInList();
-        }
-      }
-    })
+    this.getClockInList();
   },
   getClockInList:function(){//获取打卡列表
     var that = this;
     wx.request({
-      url: 'https://www.fullmusic.club:444/xcx/clockInList?userId=' + this.data.userInfo.nickName +'&currPage=1',
+      url: 'https://fullmusic.club/xcx/clockInList?userId=' + this.data.userInfo.nickName +'&currPage=1',
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -117,7 +99,8 @@ Page({
           console.log(res.data)
           for (let i = 0; i < res.data.list.length; i++) {
             //console.log(res.data.list);
-            res.data.list[i].vcResourceUrl = "https://www.fullmusic.club:444/" + res.data.list[i].vcResourceUrl;
+            res.data.list[i].vcResourceUrl = "https://fullmusic.club/" + res.data.list[i].vcResourceUrl;
+            res.data.list[i].input = "";
           }
           that.setData({
             clockInList: res.data.list
@@ -133,13 +116,14 @@ Page({
     
   },
   openScan:function(){//扫码注册
+    
     var that = this;
     console.log(this.data.userInfo);
     wx.scanCode({
       onlyFromCamera: true,
       success(res) {
         wx.request({
-          url: 'https://www.fullmusic.club:444/xcx/loginIn?userId=' + that.data.userInfo.nickName + "&password=" + res.result,
+          url: 'https://fullmusic.club/xcx/loginIn?userId=' + that.data.userInfo.nickName + "&password=" + res.result,
           header: {
             'content-type': 'application/json' // 默认值
           },
@@ -201,7 +185,7 @@ Page({
    */
   onReady: function () {
     wx.connectSocket({
-      url: 'wss://www.fullmusic.club:444/fullmusic',
+      url: 'wss://fullmusic.club/fullmusic',
       success: function (res) {
         console.log("连接服务器成功")
       },
@@ -258,7 +242,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.getClockInList();
   },
 
   /**
