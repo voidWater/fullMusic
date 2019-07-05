@@ -10,7 +10,12 @@
     "pages/person/person",
     "pages/clockIn/clockIn",
     "pages/rankingList/rankingList",
-    "pages/dateutil/date"
+    "pages/dateutil/date",
+    "pages/tmaaCourse/test",
+    "pages/tmaaCourse/completeInfo",
+    "pages/tmaaCourse/main",
+    "pages/tmaaCourse/toMakeAnApp",
+    "pages/tmaaCourse/courseDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

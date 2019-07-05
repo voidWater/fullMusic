@@ -1,0 +1,29 @@
+/* pages/tmaaCourse/completeInfo.wxss */
+.title-bar{
+  border-left: 10rpx solid #5a8478;
+  padding-left: 40rpx;
+  font-size: 45rpx;
+}
+.main{
+  padding: 10rpx;
+}
+.head-bar-block{
+  height:80rpx;width:100%;
+}
+.head-bar{
+  position: fixed;
+  z-index: 999998;
+  top: 0;
+  height:80rpx;width:100%;background-color: #5a8478;color: #fff;line-height: 80rpx;text-align: center;
+  font-weight: 700;
+}
+
+.rq-bar{
+  padding: 20rpx;
+}
+.rq-bar-text{
+  border-left: 20rpx solid #5a8478;
+  font-size: 45rpx;
+  font-weight: 700;
+  padding-left: 10rpx;
+}

@@ -1,0 +1,46 @@
+/* pages/tmaaCourse/main.wxss */
+page{
+  background-color: rgb(228, 226, 220)
+}
+.head-bar-block{
+  height:80rpx;width:100%;
+}
+.head-bar{
+  position: fixed;
+  z-index: 999998;
+  top: 0;
+  height:80rpx;width:100%;background-color: #5a8478;color: #fff;line-height: 80rpx;text-align: center;
+  font-weight: 700;
+}
+.list-item{
+  margin-top:20rpx;
+}
+
+/*课程表*/
+.rq-bar{
+  padding: 20rpx;
+}
+.rq-bar-text{
+  border-left: 20rpx solid #5a8478;
+  font-size: 30rpx;
+  font-weight: 700;
+  padding-left: 10rpx;
+  color:#5a8478;
+}
+
+/**/
+.xzrq-bar{
+  background-color: #fff;
+}
+.time-bar{
+  background-color: #fff;
+  padding: 30rpx;
+}
+.info-bar{
+  font-size: 25rpx;
+  text-align: center;
+  margin-top: 50rpx;
+}
+.info-text{
+  color:red;
+}

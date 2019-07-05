@@ -11,30 +11,44 @@
   </swiper>
 </view>
 <view class="interval bar">
-  <view class="interval-bar">—— 名师推荐 ——</view>
+  <view class="interval-bar">—— 名师资历 ——</view>
   <view class="line"></view>
   <view class="teacher-list">
     <view class="teacher">
-        <image class="teacher-img" src="../../img/wcs.jpg" mode="widthFix"></image>
-        <view><text class="teacher-text">王川珊</text></view>
-        <view><text class="teacher-text">高级钢琴师</text></view>
+        <image class="teacher-img" src="../../img/js1.png" mode="widthFix"></image>
+        <view><text class="teacher-text" style="font-size:30rpx">王川珊</text></view>
+        <view><text class="teacher-text">●旅英青年钢琴演奏家</text></view>
+        <view><text class="teacher-text">●英国皇家音乐学院（RAM）钢琴演奏艺术硕士</text></view>
+        <view><text class="teacher-text">●海口市音乐交流协会会员</text></view>
+        <view><text class="teacher-text">●琼台师范学院音乐与舞蹈系教师</text></view>
+        <view><text class="teacher-text">●2019届世界钢琴教师联盟荣誉钢琴教师</text></view>
+        <view><text class="teacher-text">●2016年担任意大利顶级名琴FAZIOLI钢琴艺术家</text></view>
     </view>
     <view class="teacher">
-        <image class="teacher-img" src="../../img/wcs.jpg" mode="widthFix"></image>
-        <view><text class="teacher-text">王川珊</text></view>
-        <view><text class="teacher-text">高级钢琴师</text></view>
+        <image class="teacher-img" src="../../img/js2.png" mode="widthFix"></image>
+        <view><text class="teacher-text" style="font-size:30rpx">陈红浪</text></view>
+        <view><text class="teacher-text">●加拿大籍艺术家</text></view>
+        <view><text class="teacher-text">●星海音乐学院本科毕业</text></view>
+        <view><text class="teacher-text">●曾担任广东歌舞剧院独唱演员并留校任教</text></view>
+        <view><text class="teacher-text">●多伦多大学音乐系及皇家国际音乐学院担任声乐及钢琴教师</text></view>
+        <view><text class="teacher-text">●超过23年丰富的教学经验</text></view>
     </view>
     <view class="teacher">
-        <image class="teacher-img" src="../../img/wcs.jpg" mode="widthFix"></image>
-        <view><text class="teacher-text">王川珊</text></view>
-        <view><text class="teacher-text">高级钢琴师</text></view>
+        <image class="teacher-img" src="../../img/js3.png" mode="widthFix"></image>
+        <view><text class="teacher-text" style="font-size:30rpx">孙慧淇</text></view>
+        <view><text class="teacher-text">●海南师范大学本科毕业</text></view>
+        <view><text class="teacher-text">●现任琼台师范学院钢琴老师</text></view>
+        <view><text class="teacher-text">●海南省钢琴协会成员</text></view>
+        <view><text class="teacher-text">●海口市音乐交流协会成员</text></view>
+        <view><text class="teacher-text">●亚洲钢琴家协会会员</text></view>
+        <view><text class="teacher-text">●亚洲钢琴家协会优秀考级指导教师</text></view>
     </view>
-    <view class="teacher">
+    <view class="teacher-block">
     </view>
   </view>
 </view>
 <view class="interval bar">
-  <view class="interval-bar">—— 学习环境 ——</view>
+  <view class="interval-bar">—— 学生风采 ——</view>
   <view class="line"></view>
   <view class="envir">
       <view class="envir-img-view">

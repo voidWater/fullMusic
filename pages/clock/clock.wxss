@@ -21,7 +21,7 @@
 .head-bar{
   height: 300rpx;
   background-color: #3243;
-  background-image: url('https://www.fullmusic.club:444/th2.jpg');
+  background-image: url('https://fullmusic.club/img/head.jpg');
 }
 .clock-list{
   background-color: #fff;border-top:3px solid #3243;border-radius: 20px;padding-top: 10rpx;padding-bottom: 140rpx;

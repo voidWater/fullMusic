@@ -1,0 +1,150 @@
+<!--课程表-->
+<view hidden='{{kcb}}'>
+  <view class='head-bar-block'></view>
+  <view class='head-bar'>我的课程表
+  <i-notice-bar icon="systemprompt" loop>
+    佳能今天倒闭了吗
+  </i-notice-bar>
+  </view>
+  <i-notice-bar icon="systemprompt" loop>
+    佳能今天倒闭了吗
+  </i-notice-bar>
+  <i-cell-group>
+  <view class='rq-bar'>
+    <view class='rq-bar-text'>2019-07-04 星期四</view>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' bindtap="openDetail" title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  </i-cell-group>
+
+  <i-cell-group>
+  <view class='rq-bar'>
+    <view class='rq-bar-text'>2019-07-05 星期五</view>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  </i-cell-group>
+  <i-cell-group>
+  <view class='rq-bar'>
+    <view class='rq-bar-text'>2019-07-05 星期五</view>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  </i-cell-group>
+</view>
+<!--课程详情-->
+<view hidden='{{detail}}'>
+  <view class="detail-bar">
+    <i-row>
+      <i-col span="8" i-class="col-class">
+        <image class='detail-img' mode='widthFix' src='../../img/head1.jpg'></image>
+      </i-col>
+      <i-col span="16" i-class="col-class">
+        <view class="main-text">钢琴课</view>
+        <view class="detail-text">
+           <view>上课日期：2019-07-6 周六 9:00</view>
+           <view>学员姓名：凌云蕾</view>
+           <view>上课老师：王川珊</view>
+        </view>
+      </i-col>
+    </i-row>
+  </view>
+  <view class='pl'>
+    
+  </view>
+</view>
+<!--约课--选择老师-->
+<view hidden='{{yk}}'>
+    <view class='head-bar-block'></view>
+    <view class="head-bar"><text>选择老师</text></view>
+    <view class="list-item">
+      <i-card  bindtap='toXk' title="王川珊" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+        <view slot="content">教师座右铭</view>
+    </i-card>
+    </view>
+    <view class="list-item">
+      <i-card  bindtap='toXk' title="王川珊" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+        <view slot="content">教师座右铭</view>
+    </i-card>
+    </view>
+    <view class="list-item">
+      <i-card  bindtap='toXk' title="王川珊" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+        <view slot="content">教师座右铭</view>
+    </i-card>
+    </view>
+</view>
+<!--上课记录-->
+<view hidden='{{jl}}'>
+  <view class='head-bar-block'></view>
+  <view class='head-bar'>我的上课记录</view>
+  <i-cell-group>
+  <view class='rq-bar'>
+    <view class='rq-bar-text'>2019-07-04 星期四</view>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  </i-cell-group>
+
+  <i-cell-group>
+  <view class='rq-bar'>
+    <view class='rq-bar-text'>2019-07-05 星期五</view>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  </i-cell-group>
+  <i-cell-group>
+  <view class='rq-bar'>
+    <view class='rq-bar-text'>2019-07-05 星期五</view>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  <view class='mycell'>
+    <i-cell class='mycell' title="王川珊老师" label="9:30" value="初级课程" is-link></i-cell>
+  </view>
+  </i-cell-group>
+</view>
+
+<i-tab-bar current="{{ current }}" color="#5a8478" bindchange="handleChange" fixed="true">
+    <i-tab-bar-item key="kcb" icon="createtask" current-icon="createtask_fill" title="课程表"></i-tab-bar-item>
+    <i-tab-bar-item key="yk" icon="task" current-icon="task_fill" title="约课"></i-tab-bar-item>
+    <i-tab-bar-item key="jl" icon="mine" current-icon="mine_fill" title="上课记录"></i-tab-bar-item>
+</i-tab-bar>

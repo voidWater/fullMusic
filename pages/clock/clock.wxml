@@ -1,7 +1,7 @@
 <!--pages/clock/clock.wxml-->
 <view>
   <view class="head-bar">
-  <view class="bb"></view>
+    <view class="bb"></view>
     <view class="head-userinfo">
       <image class="head-userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="head-userinfo-nickname" bindtap='login'>{{userInfo.nickName}}{{qrcode}}</text>
@@ -25,7 +25,6 @@
           <view class="clock-bar"></view>
           <view class="comment-list">
              <view wx:for="{{item.coommsList}}" wx:for-item="list" wx:for:key="id"><text class="comment-name">{{list.vcUserId}}:</text>{{list.vcContent}}</view>
-             <!--<view><text class="comment-name">立宪昌:</text>2132312312</view>--> 
           </view>
           <view style="padding-left:20rpx">
              <input data-id="{{item.id}}" placeholder="请输入评论" bindinput="bindKeyInput" value="{{item.input}}"/>
@@ -33,14 +32,6 @@
           <view data-id="{{item.id}}" class="comment-btn" bindtap='pusgComment'>评论</view>
         </view>
     </view>
-    <!---->  
-    
-    <!---->  
-    
-    <!---->  
-    
-    <!---->  
-    
   </view>
   <image  class="img-dk" src="../../img/mz2.jpg" bindtap="clockInPage"></image>
   <view  class='footer dk-footer' >

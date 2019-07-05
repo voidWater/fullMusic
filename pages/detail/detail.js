@@ -4,9 +4,8 @@ Page({
   data: {
     showBar:{
       imgUrls: [
-        '../../img/987.png',
-        '../../img/IMG_3955.jpg',
-        '../../img/987.png'
+        '../../img/head.jpg',
+        '../../img/IMG_3955.jpg'
       ],
       indicatorDots: false,
       vertical: false,

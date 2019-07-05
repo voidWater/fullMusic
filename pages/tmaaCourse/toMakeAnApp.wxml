@@ -1,0 +1,59 @@
+<!--pages/main/toMakeAnApp.wxml-->
+<view class='head-bar-block'></view>
+<view class='head-bar'>在线约课</view>
+<view class='rq-bar'>
+  <view class='rq-bar-text'>你选择老师</view>
+</view>
+<i-card  bindtap='toXk' full="true" title="王川珊" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+</i-card>
+<view class='rq-bar'>
+  <view class='rq-bar-text'>选择课程</view>
+</view>
+<i-panel title="">
+    <i-radio-group current="{{current}}" bindchange="handleFruitChange">
+        <i-radio wx:for="{{fruit}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+        </i-radio>
+    </i-radio-group>
+</i-panel>
+<view class='rq-bar'>
+  <view class='rq-bar-text'>选择时间</view>
+</view>
+<view class='xzrq-bar'>
+  <i-grid>
+      <i-grid-item>07/05</i-grid-item>
+      <i-grid-item>07/06</i-grid-item>
+      <i-grid-item>07/07</i-grid-item>
+      <i-grid-item> 07/08</i-grid-item>
+  </i-grid>
+</view>
+
+
+<view class="time-bar">
+  
+  <i-grid>
+    <i-grid-item i-class='bac'>09:00</i-grid-item>
+    <i-grid-item>11:00</i-grid-item>
+    <i-grid-item>14:00</i-grid-item>
+    <i-grid-item>16:00</i-grid-item>
+  </i-grid>
+  <i-grid>
+    <i-grid-item i-class='bac'>09:00</i-grid-item>
+    <i-grid-item>11:00</i-grid-item>
+    <i-grid-item>14:00</i-grid-item>
+    <i-grid-item>16:00</i-grid-item>
+  </i-grid>
+  <i-grid>
+    <i-grid-item i-class='bac'>09:00</i-grid-item>
+    <i-grid-item>11:00</i-grid-item>
+    <i-grid-item>14:00</i-grid-item>
+    <i-grid-item>16:00</i-grid-item>
+  </i-grid>
+  <i-grid>
+    <i-grid-item i-class='bac'>09:00</i-grid-item>
+    <i-grid-item>11:00</i-grid-item>
+    <i-grid-item>14:00</i-grid-item>
+    <i-grid-item>16:00</i-grid-item>
+  </i-grid>
+</view>
+<view class="info-bar">你已预约<text class="info-text">7月06日 周六 09:30 的基础课</text></view>
+<i-button i-class="btns">立即预约</i-button>

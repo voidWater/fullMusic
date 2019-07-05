@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "i-grid": "../../utils/dist/grid/index",
+    "i-grid-item": "../../utils/dist/grid-item/index",
+    "i-grid-icon": "../../utils/dist/grid-icon/index",
+    "i-grid-label": "../../utils/dist/grid-label/index",
+    "i-button": "../../utils/dist/button/index",
+    "i-radio-group": "../../utils/dist/radio-group/index",
+    "i-radio": "../../utils/dist/radio/index",
+    "i-panel": "../../utils/dist/panel/index",
+    "i-card": "../../utils/dist/card/index"
+  }
+}

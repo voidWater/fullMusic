@@ -31,13 +31,16 @@
   display: flex;flex-direction: row;padding: 10rpx;flex-wrap: wrap;justify-content: space-evenly;background-color: #ffffff;
 }
 .teacher{
-  width: 40%;height: 40%;margin-top: 35rpx;
+  width: 40%;margin-top: 35rpx;background-color: #f7d9b3;padding: 20rpx 30rpx 20rpx 20rpx;border-radius: 10rpx;
+}
+.teacher-block{
+  width: 40%;height: 40%;margin-top: 35rpx;padding: 20rpx 30rpx 80rpx 20rpx;
 }
 .teacher-img{
   width: 100%;height: 250rpx;border:1px solid f0f0f0;border-radius: 10rpx;
 }
 .teacher-text{
-  font-size: 30rpx;color: #adaaaa;
+  font-size: 20rpx;
 }
 .envir{
   background-color: #fff;

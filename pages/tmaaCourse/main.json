@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-tab-bar": "../../utils/dist/tab-bar/index",
+    "i-tab-bar-item": "../../utils/dist/tab-bar-item/index",
+    "i-card": "../../utils/dist/card/index",
+    "i-cell-group": "../../utils/dist/cell-group/index",
+    "i-cell": "../../utils/dist/cell/index",
+    "i-notice-bar": "../../utils/dist/notice-bar/index",
+    "i-row": "../../utils/dist/row/index",
+    "i-col": "../../utils/dist/col/index"
+  }
+}

@@ -21,6 +21,12 @@ Page({
     wx.navigateTo({
       url: '../detail/detail'
     })
+    
+  },
+  toTmaaCourse:function(){
+    wx.navigateTo({
+      url: '../tmaaCourse/test'
+    })
   },
   login: function(){//登录
     var that = this;

@@ -1,0 +1,33 @@
+<!--pages/tmaaCourse/completeInfo.wxml-->
+ <view class='head-bar-block'></view>
+  <view class='head-bar'>简乐艺术中心</view>
+  <view class='rq-bar'>
+    <view class='rq-bar-text'>第一次约课，请先完善信息</view>
+  </view>
+<view class="main">
+  <i-panel title="基础信息">
+    <i-input value="{{ name }}" title="学生名称" autofocus placeholder="请输入学生名称" />
+    <i-input value="{{ age }}" type="number" title="学生年龄"  placeholder="请输入学生年龄" />
+    <i-input value="{{ phone }}" type="number" title="联系电话" placeholder="请输入手机号" />
+</i-panel>
+
+<i-panel title="学琴时长">
+    <i-radio-group current="{{current}}" bindchange="handleFruitChange">
+        <i-radio wx:for="{{fruit}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+        </i-radio>
+    </i-radio-group>
+</i-panel>
+<i-panel title="是否有琴">
+     <i-radio-group current="{{animal_current}}" bindchange="handleAnimalChange">
+        <i-radio wx:for="{{animal}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+        </i-radio>
+    </i-radio-group>
+</i-panel>
+
+<i-button bind:click="goToIn" type="error" shape="circle" size="large">点击进入</i-button>
+</view>
+
+
+
+
+

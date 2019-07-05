@@ -1,0 +1,15 @@
+<!--pages/tmaaCourse/test.wxml-->
+
+<view class="head">
+  <text>学生</text>
+</view>
+<view class="btn-list">
+  <view class="btn" bindtap='towsxx'>完善信息</view>
+  <view class="btn" bindtap='toCmain'>主入口</view> 
+</view>
+<view class="head">
+  <text>老师</text>
+</view>
+<view class="btn-list">
+  <view class="btn">主入口</view>
+</view>
