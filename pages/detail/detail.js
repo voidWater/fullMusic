@@ -4,7 +4,7 @@ Page({
   data: {
     showBar:{
       imgUrls: [
-        '../../img/head.jpg',
+        '../../img/head1.jpg',
         '../../img/IMG_3955.jpg'
       ],
       indicatorDots: false,

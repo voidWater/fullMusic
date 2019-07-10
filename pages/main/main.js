@@ -29,19 +29,21 @@ Page({
     })
   },
   login: function(){//登录
+    //用户信息固化
+    console.log(getApp().globalData.userInfo);
     var that = this;
     wx.login({
       success(res) {
         if (res.code) {
           wx.request({
-            url: 'https://fullmusic.club/xcx/getOpenId?code=' + res.code,
+            url: 'https://fullmusic.club/login/getOpenId?code=' + res.code,
             header: {
               'content-type': 'application/json' // 默认值
             },
             success(res) {
               app.globalData.openId = res.data.openid;
               wx.request({
-                url: 'https://fullmusic.club/xcx/login?userId=' + app.globalData.openId,
+                url: 'https://fullmusic.club/xcx/login?userId=' + app.globalData.openId + "&name=" + getApp().globalData.userInfo.nickName + "&icon=" + getApp().globalData.userInfo.avatarUrl,
                 header: {
                   'content-type': 'application/json' // 默认值
                 },
@@ -53,7 +55,7 @@ Page({
                       isSignIn:true
                     });
                     wx.showToast({
-                      title: '登录成功',
+                      title: getApp().globalData.userInfo.nickName+'登录成功',
                       icon: 'success',
                       duration: 2000
                     })
@@ -78,7 +80,7 @@ Page({
       onlyFromCamera: true,
       success(res) {
         wx.request({
-          url: 'https://fullmusic.club/xcx/loginIn?userId=' + app.globalData.openId + "&password=" + res.result,
+          url: 'https://fullmusic.club/login/loginIn?userId=' + app.globalData.openId + "&password=" + res.result + "&name=" + getApp().globalData.userInfo.nickName + "&icon=" + getApp().globalData.userInfo.avatarUrl, 
           header: {
             'content-type': 'application/json' // 默认值
           },
@@ -104,7 +106,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.login();
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+      this.login();
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        });
+        this.login();
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          });
+          this.login();
+        }
+      })
+    }
+    //this.login();
   },
 
   /**

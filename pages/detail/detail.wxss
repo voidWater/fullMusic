@@ -1,17 +1,18 @@
-@import "/icon/icon.wxss";
 .container{
  flex-direction: column;
  align-content: space-between;
+ padding: 0 30rpx;
+ border-right: 30rpx solid #7ac5a5;
+ border-left: 30rpx solid #7ac5a5;
 }
 .bar{
   width: 100%; 
 }
 .title-bar{
-  text-align: center; background-color: #eccac8;color: #fff;height: 80rpx;line-height: 80rpx;
+  text-align: center; background-color: #febc85;color: #fff;height: 80rpx;line-height: 80rpx;
 }
 .interval-bar{
-  border-top: 25rpx solid #f0f0f0;
-  text-align: center;background-color: #ffffff;color: #f7d9b3;
+  text-align: center;background-color: #ffffff;color: #febc85;
   height: 80rpx;
   line-height: 80rpx;
   font-size: 35rpx;
@@ -31,7 +32,7 @@
   display: flex;flex-direction: row;padding: 10rpx;flex-wrap: wrap;justify-content: space-evenly;background-color: #ffffff;
 }
 .teacher{
-  width: 40%;margin-top: 35rpx;background-color: #f7d9b3;padding: 20rpx 30rpx 20rpx 20rpx;border-radius: 10rpx;
+  width: 40%;margin-top: 35rpx;background-color: #febc85;padding: 20rpx 30rpx 20rpx 20rpx;border-radius: 10rpx;
 }
 .teacher-block{
   width: 40%;height: 40%;margin-top: 35rpx;padding: 20rpx 30rpx 80rpx 20rpx;
@@ -66,4 +67,19 @@
 }
 .maps{
   width:100%;
+}
+
+.myCard{
+  margin-top:30rpx;
+  border-radius: 15rpx;
+}
+.head-bar-block{
+  height:80rpx;width:100%;
+}
+.head-bar{
+  position: fixed;
+  z-index: 999998;
+  top: 0;
+  height:80rpx;width:100%;background-color: #7ac5a5;color: #fff;line-height: 80rpx;text-align: center;
+  font-weight: 700;
 }
