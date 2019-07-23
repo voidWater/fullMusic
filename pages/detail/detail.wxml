@@ -15,7 +15,7 @@
     <view class="interval-bar">—— 名师资历 ——</view>
     <view class="line"></view>
     <view style="margin-top:30rpx;">
-      <i-card title="王川珊" extra="" thumb="https://fullmusic.club:444/img/js1.png">
+      <i-card title="王川珊" extra="" thumb="https://fullmusic.club/img/js1.png">
         <view slot="content">
             <view><text class="teacher-text">●旅英青年钢琴演奏家</text></view>
             <view><text class="teacher-text">●英国皇家音乐学院（RAM）钢琴演奏艺术硕士</text></view>
@@ -27,7 +27,7 @@
       </i-card>
     </view>
     <view style="margin-top:30rpx;">
-      <i-card title="陈红浪" extra="" thumb="https://fullmusic.club:444/img/js2.png">
+      <i-card title="陈红浪" extra="" thumb="https://fullmusic.club/img/js2.png">
         <view slot="content">
             <view><text class="teacher-text">●加拿大籍艺术家</text></view>
             <view><text class="teacher-text">●星海音乐学院本科毕业</text></view>
@@ -38,7 +38,7 @@
       </i-card>
     </view>
     <view style="margin-top:30rpx;">
-      <i-card title="孙慧淇" extra="" thumb="https://fullmusic.club:444/img/js3.png">
+      <i-card title="孙慧淇" extra="" thumb="https://fullmusic.club/img/js3.png">
         <view slot="content">
               <view><text class="teacher-text">●海南师范大学本科毕业</text></view>
               <view><text class="teacher-text">●现任琼台师范学院钢琴老师</text></view>

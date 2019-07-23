@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isSignIn:true
+    isSignIn:false
   },
   toClockin:function(){//to小打卡
    
@@ -23,20 +23,49 @@ Page({
     })
     
   },
-  toTmaaCourse:function(){
-    wx.navigateTo({
+  toTmaaCourse:function(){//在线约课
+    if (this.data.isSignIn==false){
+      wx.showToast({
+        title:  '请先注册',
+        icon: 'none',
+        duration: 2000
+      })
+    }else{
+      this.isFirst();
+    }
+    /*wx.navigateTo({
       url: '../tmaaCourse/test'
-    })
+    })*/
+  },
+  isFirst:function(){
+    wx.request({
+      url: 'https://fullmusic.club/xk/isFirst?id=' + app.globalData.openId,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.code == 2){
+          wx.navigateTo({
+            url: '../tmaaCourse/completeInfo'
+          })
+        }else{
+          wx.navigateTo({
+            url: '../tmaaCourse/test'
+          })
+        }
+      }
+    });
   },
   login: function(){//登录
     //用户信息固化
     console.log(getApp().globalData.userInfo);
-    var that = this;
-    wx.login({
+      var that = this;     
+      wx.login({
       success(res) {
         if (res.code) {
           wx.request({
-            url: 'https://fullmusic.club/login/getOpenId?code=' + res.code,
+            url: 'https://fullmusic.club/xcx/getOpenId?code=' + res.code,
             header: {
               'content-type': 'application/json' // 默认值
             },
@@ -80,7 +109,7 @@ Page({
       onlyFromCamera: true,
       success(res) {
         wx.request({
-          url: 'https://fullmusic.club/login/loginIn?userId=' + app.globalData.openId + "&password=" + res.result + "&name=" + getApp().globalData.userInfo.nickName + "&icon=" + getApp().globalData.userInfo.avatarUrl, 
+          url: 'https://fullmusic.club/xcx/loginIn?userId=' + app.globalData.openId + "&password=" + res.result + "&name=" + getApp().globalData.userInfo.nickName + "&icon=" + getApp().globalData.userInfo.avatarUrl, 
           header: {
             'content-type': 'application/json' // 默认值
           },

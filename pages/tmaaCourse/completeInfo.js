@@ -5,9 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '1',
-    age: '2',
-    phone: '3',
+    name: '',
+    age: '',
+    phone: '',
     jc: 1,
     yq:1,
     fruit: [{
@@ -53,6 +53,25 @@ Page({
     console.log(this.data.phone);
     console.log(this.data.jc);
     console.log(this.data.yq);
+    wx.request({
+      url: 'https://fullmusic.club/xk/complementInfo?userId=' + app.globalData.openId + "&studentName=" + this.data.name + "&age=" + this.data.age + "&phone=" + this.data.phone+
+        "&lTime=" + this.data.jc + "&hPiano=" + this.data.yq,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.code == 2) {
+          wx.navigateTo({
+            url: '../tmaaCourse/completeInfo'
+          })
+        } else {
+          wx.navigateTo({
+            url: '../tmaaCourse/test'
+          })
+        }
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面加载
