@@ -1,4 +1,5 @@
 // pages/tmaaCourse/main.js
+const app = getApp();
 Page({
 
   /**
@@ -9,9 +10,12 @@ Page({
     kcb:false,
     yk:true,
     jl:true,
-    detail:true
+    detail:true,
+    teacherList:[]
   },
-  toXk:function(){
+  toXk:function(val){
+    console.log(val.currentTarget.dataset.teacher)
+    app.globalData.chooseTeacher = val.currentTarget.dataset.teacher;
     wx.navigateTo({
       url: '../tmaaCourse/toMakeAnApp'
     })
@@ -59,7 +63,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.request({
+      url: 'https://fullmusic.club/xk/getTeacher',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          teacherList:res.data.list
+        });
+      }
+    });
   },
 
   /**

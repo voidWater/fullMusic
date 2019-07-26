@@ -4,7 +4,7 @@
 <view class='rq-bar'>
   <view class='rq-bar-text'>你选择老师</view>
 </view>
-<i-card  bindtap='toXk' full="true" title="王川珊" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+<i-card  bindtap='toXk' full="true" title="{{teacher.vcName}}" thumb="{{teacher.vcAddr}}">
 </i-card>
 <view class='rq-bar'>
   <view class='rq-bar-text'>选择课程</view>
@@ -20,10 +20,7 @@
 </view>
 <view class='xzrq-bar'>
   <i-grid>
-      <i-grid-item>07/05</i-grid-item>
-      <i-grid-item>07/06</i-grid-item>
-      <i-grid-item>07/07</i-grid-item>
-      <i-grid-item> 07/08</i-grid-item>
+      <i-grid-item wx:for="{{dataList}}">{{item}}</i-grid-item>
   </i-grid>
 </view>
 

@@ -30,7 +30,7 @@ page{
 
 /**/
 .xzrq-bar{
-  background-color: #fff;
+  background-color: #fff;font-size: 25rpx;
 }
 .time-bar{
   background-color: #fff;

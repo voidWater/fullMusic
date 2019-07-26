@@ -78,20 +78,10 @@
 <view hidden='{{yk}}'>
     <view class='head-bar-block'></view>
     <view class="head-bar"><text>选择老师</text></view>
-    <view class="list-item">
-      <i-card  bindtap='toXk' title="王川珊" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-        <view slot="content">教师座右铭</view>
-    </i-card>
-    </view>
-    <view class="list-item">
-      <i-card  bindtap='toXk' title="王川珊" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-        <view slot="content">教师座右铭</view>
-    </i-card>
-    </view>
-    <view class="list-item">
-      <i-card  bindtap='toXk' title="王川珊" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-        <view slot="content">教师座右铭</view>
-    </i-card>
+    <view class="list-item" wx:for="{{teacherList}}">
+      <i-card  data-teacher="{{item}}" bindtap='toXk' title="{{item.vcName}}" full="true" extra="" thumb="{{item.vcAddr}}">
+        <view slot="content">简介</view>
+      </i-card>
     </view>
 </view>
 <!--上课记录-->

@@ -1,4 +1,7 @@
 // pages/tmaaCourse/completeInfo.js
+
+//const { $Toast } = require('../../utils/dist/toast/index');
+const app = getApp();
 Page({
 
   /**
@@ -8,8 +11,6 @@ Page({
     name: '',
     age: '',
     phone: '',
-    jc: 1,
-    yq:1,
     fruit: [{
       id: 1,
       name: '零基础',
@@ -31,43 +32,53 @@ Page({
     animal_current: '是',
     position: 'left'
   },
-  handleFruitChange({ detail = {} }) {
+  nameInput:function(e){
+    this.setData({
+      name: e.detail.detail.value
+    })
+  },
+  ageInput: function (e) {
+    this.setData({
+      age: e.detail.detail.value
+    })
+  },
+  phoneInput: function (e) {
+    this.setData({
+      phone: e.detail.detail.value
+    })
+  },
+  handleFruitChange({ detail }) {
     this.setData({
       current: detail.value
-    });
-    this.setData({
-      jc: detail.key
     });
   },
   handleAnimalChange({ detail = {} }) {
     this.setData({
       animal_current: detail.value
     });
-    this.setData({
-      yq: detail.key
-    });
   },
   goToIn:function(){
     console.log(this.data.name);
     console.log(this.data.age);
     console.log(this.data.phone);
-    console.log(this.data.jc);
-    console.log(this.data.yq);
+    console.log(this.data.current);
+    console.log(this.data.animal_current);
     wx.request({
       url: 'https://fullmusic.club/xk/complementInfo?userId=' + app.globalData.openId + "&studentName=" + this.data.name + "&age=" + this.data.age + "&phone=" + this.data.phone+
-        "&lTime=" + this.data.jc + "&hPiano=" + this.data.yq,
+        "&lTime=" + this.data.current + "&hPiano=" + this.data.animal_current,
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
         console.log(res)
-        if (res.data.code == 2) {
-          wx.navigateTo({
-            url: '../tmaaCourse/completeInfo'
-          })
+        if (res.data.code == -1) {
+          $Toast({
+            content: '信息错误',
+            type: 'warning'
+          });
         } else {
           wx.navigateTo({
-            url: '../tmaaCourse/test'
+            url: '../tmaaCourse/toMakeAnApp'
           })
         }
       }

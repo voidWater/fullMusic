@@ -51,7 +51,7 @@ Page({
           })
         }else{
           wx.navigateTo({
-            url: '../tmaaCourse/test'
+            url: '../tmaaCourse/main'
           })
         }
       }
@@ -84,7 +84,7 @@ Page({
                       isSignIn:true
                     });
                     wx.showToast({
-                      title: getApp().globalData.userInfo.nickName+'登录成功',
+                      title: '登录成功',
                       icon: 'success',
                       duration: 2000
                     })

@@ -8,6 +8,8 @@
     "i-radio-group": "../../utils/dist/radio-group/index",
     "i-radio": "../../utils/dist/radio/index",
     "i-panel": "../../utils/dist/panel/index",
-    "i-card": "../../utils/dist/card/index"
+    "i-card": "../../utils/dist/card/index",
+    "i-checkbox-group": "../../utils/dist/checkbox-group/index",
+    "i-checkbox": "../../utils/dist/checkbox/index"
   }
 }

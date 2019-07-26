@@ -6,9 +6,9 @@
   </view>
 <view class="main">
   <i-panel title="基础信息">
-    <i-input value="{{ name }}" title="学生名称" autofocus placeholder="请输入学生名称" />
-    <i-input value="{{ age }}" type="number" title="学生年龄"  placeholder="请输入学生年龄" />
-    <i-input value="{{ phone }}" type="number" title="联系电话" placeholder="请输入手机号" />
+    <i-input value="{{ name }}" bind:change='nameInput' title="学生名称"  placeholder="请输入学生名称" maxlength="50"/>
+    <i-input value="{{ age }}"  bind:change='ageInput' type="number" title="学生年龄"  placeholder="请输入学生年龄" maxlength="50"/>
+    <i-input value="{{ phone }}" bind:change='phoneInput' type="number" title="联系电话" placeholder="请输入手机号" maxlength="50"/>
 </i-panel>
 
 <i-panel title="学琴时长">
