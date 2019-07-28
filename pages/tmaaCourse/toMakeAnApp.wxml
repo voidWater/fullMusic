@@ -20,37 +20,19 @@
 </view>
 <view class='xzrq-bar'>
   <i-grid>
-      <i-grid-item wx:for="{{dataList}}">{{item}}</i-grid-item>
+      <i-grid-item data-dateD="{{item}}" bindtap='chooseDate'i-class="{{item.x}}" wx:for="{{dataList}}">{{item.d}}</i-grid-item>
   </i-grid>
 </view>
 
 
 <view class="time-bar">
   
-  <i-grid>
-    <i-grid-item i-class='bac'>09:00</i-grid-item>
-    <i-grid-item>11:00</i-grid-item>
-    <i-grid-item>14:00</i-grid-item>
-    <i-grid-item>16:00</i-grid-item>
-  </i-grid>
-  <i-grid>
-    <i-grid-item i-class='bac'>09:00</i-grid-item>
-    <i-grid-item>11:00</i-grid-item>
-    <i-grid-item>14:00</i-grid-item>
-    <i-grid-item>16:00</i-grid-item>
-  </i-grid>
-  <i-grid>
-    <i-grid-item i-class='bac'>09:00</i-grid-item>
-    <i-grid-item>11:00</i-grid-item>
-    <i-grid-item>14:00</i-grid-item>
-    <i-grid-item>16:00</i-grid-item>
-  </i-grid>
-  <i-grid>
-    <i-grid-item i-class='bac'>09:00</i-grid-item>
-    <i-grid-item>11:00</i-grid-item>
-    <i-grid-item>14:00</i-grid-item>
-    <i-grid-item>16:00</i-grid-item>
-  </i-grid>
+<i-panel title="">
+   <i-radio-group current="{{duringCurrent}}" bindchange="handleddChange">
+        <i-radio wx:for="{{during}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+        </i-radio>
+    </i-radio-group>
+</i-panel>
 </view>
-<view class="info-bar">你已预约<text class="info-text">7月06日 周六 09:30 的基础课</text></view>
-<i-button i-class="btns">立即预约</i-button>
+<view class="info-bar">你已选择<text class="info-text">{{chooDate}}  {{duringCurrent}}</text></view>
+<i-button i-class="btns" bind:click="handleClick">立即预约</i-button>

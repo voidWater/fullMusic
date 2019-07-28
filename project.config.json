@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
 	"appid": "wx431f23cd6d3cccd7",
-	"projectname": "full%20music",
+	"projectname": "fullMusic",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

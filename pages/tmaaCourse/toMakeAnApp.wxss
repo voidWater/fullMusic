@@ -1,6 +1,6 @@
 /* pages/tmaaCourse/main.wxss */
 page{
-  background-color: rgb(228, 226, 220)
+  background-color: rgb(252, 252, 252)
 }
 .head-bar-block{
   height:80rpx;width:100%;
@@ -43,4 +43,9 @@ page{
 }
 .info-text{
   color:red;
+}
+
+.kks{
+  color:#fff;
+  background-color: #5a8478;
 }

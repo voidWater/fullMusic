@@ -16,7 +16,30 @@ Page({
     current: '钢琴',
     position: 'left',
     teacher:null,
-    dataList:[]
+    dataList:[],
+    during: [{
+      id: 1,
+      name: '上午第一节课',
+    }, {
+      id: 2,
+        name: '上午第二节课'
+    }, {
+      id: 3,
+        name: '下午第一节课'
+    }, {
+      id: 4,
+        name: '下午第二节课',
+    },{
+        id: 5,
+        name: '晚上第一节课',
+      }],
+    duringCurrent:"",
+    chooDate:""  
+  },
+  handleddChange({ detail = {} }) {
+    this.setData({
+      duringCurrent: detail.value
+    });
   },
   handleFruitChange({ detail = {} }) {
     this.setData({
@@ -27,12 +50,57 @@ Page({
     var tmp = new Array();
     for(let i =0;i<4;i++){
       //val[i].split(",")
-      tmp.push(val[i].split(",")[0]);
+      if(i==0){
+        tmp.push({ "d": val[i].split(",")[0], "x": "kks" });
+      }else{
+        tmp.push({ "d": val[i].split(",")[0], "x": "" });
+      }
+      
     }
     this.setData({
       dataList:tmp
     })
     console.log(this.data.dataList);
+  },
+  handleClick:function(){
+    console.log(this.data.teacher);
+    console.log(app.globalData);
+    console.log(this.data.current); 
+    console.log(this.data.chooDate);
+    console.log(this.data.duringCurrent);
+    wx.request({
+      url: 'https://fullmusic.club/xk/xk/?teacherId='+
+        this.data.teacher.id
+        + '&studentId=' + app.globalData.openId+'&course='+
+        this.data.current
+        +'&date='+
+        this.data.chooDate
+        +'&orderByCourse=1',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data);
+        //that.setDateList(res.data.list);
+      }
+    });
+  },
+  chooseDate:function(val){
+    console.log(val.currentTarget.dataset.dated.d)
+    this.setData({
+      chooDate: val.currentTarget.dataset.dated.d
+    });
+    var ds = this.data.dataList;
+    for(let i = 0;i<ds.length;i++){
+      if (ds[i].d == val.currentTarget.dataset.dated.d){
+        ds[i].x="kks"
+      }else{
+        ds[i].x = ""
+      }
+    }
+    this.setData({
+      dataList:ds
+    });
   },
   /**
    * 生命周期函数--监听页面加载
